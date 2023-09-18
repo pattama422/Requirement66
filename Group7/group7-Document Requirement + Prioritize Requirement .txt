@@ -1,0 +1,559 @@
+﻿642115016 Danaikrit
+642115022 Thanapong
+642115026 Phacharanan
+642115035 Pharanya
+642115045 Sorawee
+
+
+
+
+
+
+
+
+Feature : Real-time Claim Tracker
+
+________________
+Feature Prioritization Criteria :
+
+
+Business Value: How much revenue or profit will this feature bring? Does it align with company goals?
+* Revenue/Profit Potential: Evaluate how much additional revenue or profit the feature can generate. Consider factors like pricing, market demand, and potential upsell opportunities.
+* Alignment with Company Goals: Assess whether the feature aligns with the company's strategic objectives and long-term vision. Features that contribute to core business goals should be prioritized higher.
+
+
+User Demand: How many users have requested or shown interest in this feature?
+* User Requests: Consider the number of users who have explicitly requested this feature. Frequent requests from a significant portion of your user base indicate high demand.
+* Market Research: Analyze user feedback, surveys, and market research to gauge general interest and demand for the feature.
+
+
+Development Effort: How much time, resources, and cost are involved in implementing this feature?
+* Time and Resources: Estimate the time, team resources, and associated costs required to develop and maintain the feature. Complex or resource-intensive features may need to be balanced against their potential benefits.
+* Technical Complexity: Assess the technical challenges involved in implementing the feature. Highly complex features may take longer to develop.
+________________
+
+
+Dependencies: Are there other features or systems that need to be in place before this can be implemented?
+* Feature Dependencies: Identify whether the feature is dependent on other features or systems that must be in place before it can be implemented. Dependencies can affect the feature's priority.
+* External Dependencies: Consider external factors, such as third-party integrations or regulatory requirements, that may impact feature development.
+
+
+Risk and Uncertainty: What are the potential risks involved in implementing this feature, and how uncertain are its benefits?
+* Potential Risks: Evaluate the potential risks associated with the feature, such as technical risks, market risks, or legal and compliance risks. Higher-risk features may require additional analysis and mitigation strategies.
+* Uncertainty: Consider the level of uncertainty regarding the feature's benefits and outcomes. Features with unclear or speculative benefits may need further validation before prioritization.
+
+
+
+
+________________
+
+
+URS : 
+URS-01 : Users should be able to login and access their claim status.
+URS-02 : Users should see real-time updates of their claim's progression.
+URS-03 : Users should have access to a history of their past claims.
+URS-04 : The system should display detailed information, such as submission date, required documents, and processing time.
+URS-05 : Users should receive real-time notifications on claim status changes.
+
+
+SRS :
+SRS-01 : The system shall provide a secure login mechanism.
+SRS-02 : Post-login, the system should display a dashboard of the user's active claims with their current status.
+SRS-03 : The system shall update claim statuses in real-time by pulling data from the internal claims processing system.
+SRS-04 : The system shall maintain a history of each claim's status changes.
+SRS-05 : The system will send push notifications or email notifications to users whenever there's a status change.
+
+
+
+
+________________
+
+
+Use Case Diagram : 
+
+
+  
+________________
+
+Use Case Description : 
+
+
+
+
+Use Case ID
+	URS-01
+	Use Case Name
+	User Login and Access Claim Status
+	Created By
+	Sorawee
+	Last Update By
+	Danaikrit Jaiwong
+	Date Created
+	17 / 09 / 2023
+
+
+	Last Revision Date
+	18 / 09 / 2023
+	Actors
+	User, System
+	Description
+	
+
+
+
+	Trigger
+	User want to access the system
+	Preconditions
+	User has a registered account with the platform.
+	Use Case Input Specification
+	Input
+	type
+	
+
+	
+
+	username
+	string
+	
+
+	
+
+	password
+	string
+	
+
+	
+
+	Post conditions
+	User is authenticated and has viewed the current status of their claim.
+	Normal Flows
+	User
+	System
+	 
+	a. User accesses the insurance platform.
+b. User provides their registered credentials (username and password).
+c. User navigates to the "Claim Status" section.
+d. User views the current status of their claim.
+
+
+
+
+	a. System prompts for user login credentials.
+b. System validates credentials and logs the user in.
+c. System fetches and displays the current status of the user's claim upon navigation.
+
+
+	Alternative Flow
+	a. Invalid Credentials
+b. Forgot Password
+	Exception Flow
+	Invalid login credentials provided.
+	Assumption
+	The user has access to a stable internet connection.
+
+
+	
+
+________________
+
+
+
+
+
+
+Use Case ID
+	URS-02
+	Use Case Name
+	View Real-time Claim Progression
+	Created By
+	Danaikrit Jaiwong
+	Last Update By
+	Danaikrit Jaiwong
+	Date Created
+	17 / 09 / 2023
+
+
+	Last Revision Date
+	18 / 09 / 2023
+	Actors
+	User
+	Description
+	This use case enables users to view real-time updates and progression of their insurance claims.
+	Trigger
+	User wants to check the progression of their claim.
+	Preconditions
+	User has an active claim with the system.
+	Use Case Input Specification
+	Input
+	type
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	Post conditions
+	User has up-to-date information on their claim's status.
+	Normal Flows
+	User
+	System
+	 
+	a. User logs in to the system.
+b. User navigates to the "Claim Progression" section.
+c. User views real-time updates and progression of their active claim.
+
+
+
+
+
+
+	a. System prompts for user login credentials.
+b. The system provides access to this section.
+c. The system fetches and displays live information about the user's active claim, updating it as necessary.
+
+
+	Alternative Flow
+	1.System detects no previous claims for the user.
+2.System cannot retrieve claim history.
+	Exception Flow
+	Claim Not Found
+	Assumption
+	The system provides real-time claim updates.
+
+
+	
+
+
+
+
+
+
+
+
+
+Use Case ID
+	URS-03
+	Use Case Name
+	Access History of Past Claims
+	Created By
+	Danaikrit Jaiwong
+	Last Update By
+	Danaikrit Jaiwong
+	Date Created
+	17 / 09 / 2023
+
+
+	Last Revision Date
+	18 / 09 / 2023
+	Actors
+	User
+	Description
+	This use case allows users to access a history of their past insurance claims within the system.
+	Trigger
+	User wants to view their past claims.
+	Preconditions
+	User has a registered account with past claims recorded in the system.
+	Use Case Input Specification
+	Input
+	type
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	Post conditions
+	User can view a history of their past insurance claims.
+	Normal Flows
+	User
+	System
+	 
+	a. User logs in to the system. 
+b. User navigates to the "Claim History" or "Past Claims" section. 
+c. User views a list of their past insurance claims.
+
+
+
+
+	a. The system authenticates the user and grants access.
+b. The system provides access to this section.
+c. The system retrieves and displays a list of the user's previous claims for their review.
+
+
+	Alternative Flow
+	1.System detects no previous claims for the user.
+2.System cannot retrieve claim history.
+	Exception Flow
+	The user does not have any past claims recorded
+	Assumption
+	The system records and maintains a history of the user's past claims.
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+Use Case ID
+	URS-04
+	Use Case Name
+	Display Detailed Claim Information
+	Created By
+	Danaikrit Jaiwong
+	Last Update By
+	Danaikrit Jaiwong
+	Date Created
+	17 / 09 / 2023
+
+
+	Last Revision Date
+	18 / 09 / 2023
+	Actors
+	User
+	Description
+	This use case enables users to access detailed information about their insurance claims, including submission date, required documents, and processing time.
+	Trigger
+	User wants detailed information about a specific claim.
+	Preconditions
+	User has an active or past insurance claim recorded in the system.
+	Use Case Input Specification
+	Input
+	type
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	Post conditions
+	User can access detailed information about their selected claim.
+	Normal Flows
+	User
+	System
+	 
+	a. User logs in to the system. 
+b. User navigates to the "Detailed Claim Information" section. 
+c. User selects a specific claim from the list. 
+d. User views submission date, required documents, and processing time for the selected claim.
+
+
+
+
+	a. The system authenticates the user and grants access.
+b. The system provides access to this section.
+c. The system allows the user to choose a particular claim from a list.
+d. The system displays detailed information about the selected claim, including submission date, required documents, and processing time.
+	Alternative Flow
+	1.System detects that certain key information for the claim is missing.
+2.System cannot find a claim associated with the provided Claim ID.
+	Exception Flow
+	The selected claim does not exist or is not accessible
+	Assumption
+	The system stores and provides detailed claim information.
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Use Case ID
+	URS-05
+	Use Case Name
+	Receive Real-time Claim Status Notifications
+	Created By
+	Danaikrit Jaiwong
+	Last Update By
+	Danaikrit Jaiwong
+	Date Created
+	17 / 09 / 2023
+
+
+	Last Revision Date
+	18 / 09 / 2023
+	Actors
+	User
+	Description
+	This use case allows users to receive real-time notifications regarding changes in the status of their insurance claims.
+	Trigger
+	The status of the user's insurance claim changes.
+	Preconditions
+	User has an active insurance claim with notifications enabled.
+	Use Case Input Specification
+	Input
+	type
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	Post conditions
+	User receives real-time notifications about claim status changes.
+	Normal Flows
+	User
+	System
+	 
+	a. User logs in to the system. 
+b. User navigates to the "Notification Settings" or "Claim Notifications" section.
+c. User enables real-time notifications for their insurance claims.
+
+
+
+
+	a. The system authenticates the user and grants access.
+b. The system provides access to this section.
+c. The user sets up notifications for their insurance claims in real-time.
+	Alternative Flow
+	1.Notification Service detects that the user has disabled real-time notifications.
+2.Notification Service fails to send a notification.
+	Exception Flow
+	There is an issue with delivering a notification
+	Assumption
+	The system provides real-time notifications for claim status changes based on user preferences.
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+Activity Diagram :   
+
+
+________________
+
+
+Non-Functional Requirement With Fit Criteria :
+1. Security
+* All user data must be encrypted during transmission and storage.
+* User authentication and authorization mechanisms should be implemented and tested.
+* The system should have measures in place to prevent unauthorized access to sensitive claim information.
+* Regular security audits and penetration testing should be conducted to identify and mitigate vulnerabilities.
+
+
+2. Performance
+* The system should be able to handle concurrent access from a minimum of 1000 users without significant performance degradation.
+* Claim status updates should be displayed in real-time, with a maximum delay of 5 seconds from the time of the update in the internal claims processing system.
+* Response times for user interactions (e.g., loading the claim history or receiving notifications) should not exceed 2 seconds.
+
+
+3. Scalability
+* The system should be designed to scale horizontally to accommodate increased user load during peak usage times.
+* It should support at least a 20% growth in user base annually without requiring a complete system overhaul.
+
+
+4. Reliability
+* The system should have a minimum uptime of 99.9% over a rolling 12-month period. 
+* Regular automated backups of user data and claim information should be maintained.
+* A disaster recovery plan should be in place and tested annually.
+
+
+
+
+
+5. Usability
+* The user interface should be intuitive, with a user satisfaction rating of at least 4 out of 5 in user surveys.
+* User onboarding and training materials should be provided, and the system should have a help section accessible to users.
+* The system should comply with accessibility standards (e.g., WCAG) to ensure usability for all users, including those with disabilities.
+
+
+6. Compliance
+* The system should adhere to all relevant data protection regulations and compliance standards in the region where it is deployed. 
+* Regular compliance audits and assessments should be conducted to ensure ongoing adherence to regulatory requirements.
+
+
+7. Maintainability
+* The system's codebase should follow best practices and coding standards to facilitate ease of maintenance.
+* Updates, patches, and bug fixes should be deployed within 48 hours of identification for critical issues and within 2 weeks for non-critical issues.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+________________
+
+
+UI (wireframe or prototype) :  https://shorturl.at/rHJM7
